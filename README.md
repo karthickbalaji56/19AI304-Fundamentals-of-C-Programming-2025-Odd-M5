@@ -39,7 +39,54 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void swapv(int x, int y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+
+    printf("Values inside swapv function after swapping: x = %d, y = %d\n", x, y);
+}
+
+void swapr(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+
+    printf("Values inside swapr function after swapping: a = %d, b = %d\n", *x, *y);
+}
+
+int main()
+{
+    int a, b;
+
+    printf("Enter value of a: ");
+    scanf("%d", &a);
+
+    printf("Enter value of b: ");
+    scanf("%d", &b);
+
+    printf("Before calling swapv: a = %d, b = %d\n", a, b);
+    swapv(a, b);
+    printf("After calling swapv: a = %d, b = %d\n\n", a, b);
+
+    printf("Before calling swapr: a = %d, b = %d\n", a, b);
+    swapr(&a, &b);
+    printf("After calling swapr: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
+
 # Output:
+<img width="681" height="352" alt="565710029-79717679-d636-481b-b0c8-99a73a4efb7b" src="https://github.com/user-attachments/assets/dd717785-1e0b-43fc-bc1b-a3241dbab8ed" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +124,56 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+#include <stdlib.h>
+
+int main()
+
+{
+
+int *ptr;
+
+int n, i, sum = 0;
+
+printf("Enter the number of integers: ");
+
+scanf("%d", &n);
+
+ptr = calloc(n, sizeof(int));
+
+if (ptr == NULL)
+
+{
+    printf("Memory allocation failed.\n");
+    
+    return 0;
+}
+
+printf("Enter %d integers:\n", n);
+
+for (i = 0; i < n; i++)
+{
+    scanf("%d", (ptr + i));
+}
+
+for (i = 0; i < n; i++)
+{
+    sum += *(ptr + i);
+}
+
+printf("Sum of the entered integers = %d\n", sum);
+
+free(ptr);
+
+return 0;
+}
+```
 # Output:
+<img width="818" height="294" alt="565707068-fc1778f9-1f2c-462a-80d2-f9439f12ad43" src="https://github.com/user-attachments/assets/29757eff-6557-4a85-bd4e-b1e0c3ea4a6d" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +215,47 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void displayArray(int *arr, int size);
+
+int main() {
+
+int arr[5];
+
+int i;
+
+printf("Enter 5 integers:\n");
+
+for (i = 0; i < 5; i++) {
+
+    scanf("%d", &arr[i]);
+}
+
+displayArray(arr, 5);
+
+return 0;
+}
+
+void displayArray(int *arr, int size) {
+
+int i;
+
+printf("Array elements are:\n");
+
+for (i = 0; i < size; i++) {
+
+    printf("%d ", *(arr + i));
+    
+}
+}
+```
+
 # Output:
+<img width="805" height="280" alt="565707455-4b311f14-b41e-4bcd-b7b3-102dc3485673" src="https://github.com/user-attachments/assets/b73c0e36-770d-4822-ad8d-1e300c732f4a" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +297,47 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr;
+    int n, i, sum = 0;
+
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+
+    ptr = calloc(n, sizeof(int));
+
+    if (ptr == NULL)
+    {
+        printf("Memory allocation failed.\n");
+        return 0;
+    }
+
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", (ptr + i));
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        sum += *(ptr + i);
+    }
+
+    printf("Sum of the entered integers = %d\n", sum);
+
+    free(ptr);
+
+    return 0;
+}
+```
 # Output:
+<img width="1001" height="543" alt="516759861-08cc8287-777d-40a5-ac25-16102348c3ce" src="https://github.com/user-attachments/assets/0e6400b0-ce1a-44c8-8992-7da4ab6aab9f" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +373,37 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void displayArray(int *arr, int size);
+
+int main()
+{
+    int arr[5], i;
+
+    printf("Enter 5 integers:\n");
+
+    for(i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+
+    printf("The array elements are:\n");
+
+    displayArray(arr, 5);
+
+    return 0;
+}
+
+void displayArray(int *arr, int size)
+{
+    int i;
+    for(i = 0; i < size; i++)
+        printf("%d ", *(arr + i));
+}
+```
+
 # Output:
+<img width="263" height="299" alt="565709218-236e056c-d390-44d7-acf4-467a817c95ef" src="https://github.com/user-attachments/assets/82928861-5986-4ce0-befd-d6b95b1e26cb" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
